@@ -1,6 +1,24 @@
+# Project information
 site_name: Monkey Docs
+site_url: https://aapman55.github.io/MonkeyDocs/
+site_author: aapman
+site_description: >-
+  This is not a resource site. Just a brain dump of useful stuff
+  for tools I encounter.
+
+# Theme
 theme:
   name: material
+  features:
+    - content.code.annotate
+    - navigation.expand
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -16,3 +34,43 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+
+# Enable pencil icon to directly modify page
+repo_name: aapman55/MonkeyDocs
+repo_url: https://github.com/aapman55/MonkeyDocs
+edit_uri: edit/main/docs/
+
+# Plugins
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - admonition
+  - meta
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+# Page tree
+nav:
+  - Welcome to MonkeyDocs: index.md
+  - Microsoft:
+      - SQL server:
+        - Useful scripts:
+          - Generate Queries using Templates: Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
+          - Query group members: Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
+
