@@ -8,7 +8,7 @@ site_description: >-
 
 # Theme
 theme:
-#  name: material
+  name: material
   features:
     - content.code.annotate
     - navigation.expand
