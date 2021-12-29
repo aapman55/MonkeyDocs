@@ -77,4 +77,6 @@ nav:
           - Query SSIS package contents: Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
           - Query group members: Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
           - Query SQL Dependencies: Microsoft/SQL_server/useful_scripts/SQLdependencies.md
-
+        - Helpful resources: Microsoft/SQL_server/helpful_resources.md
+  - Python:
+    - Helpful resources: Python/helpful_resources.md
