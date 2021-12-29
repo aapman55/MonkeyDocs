@@ -76,4 +76,5 @@ nav:
           - Generate Queries using Templates: Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
           - Query SSIS package contents: Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
           - Query group members: Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
+          - Query SQL Dependencies: Microsoft/SQL_server/useful_scripts/SQLdependencies.md
 
