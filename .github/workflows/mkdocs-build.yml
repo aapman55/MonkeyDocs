@@ -1,6 +1,6 @@
 name: mkdocs-build
 
-on:  pull-request
+on: pull_request
 jobs:
   deploy:
     runs-on: ubuntu-latest
