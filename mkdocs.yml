@@ -19,6 +19,7 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
+    - toc.integrate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -73,5 +74,6 @@ nav:
       - SQL server:
         - Useful scripts:
           - Generate Queries using Templates: Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
+          - Query SSIS package contents: Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
           - Query group members: Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
 
