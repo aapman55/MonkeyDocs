@@ -1,5 +1,4 @@
-name: mkdocs
-
+name: mkdocs-deploy
 
 on:
   push:
