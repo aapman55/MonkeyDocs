@@ -7,7 +7,7 @@
 * https://ola.hallengren.com/
 
 ## Videos
-* [How to Think Like the SQL Server Engine Part 1](https://www.youtube.com/watch?v=oovA_9fiXVE
+* [How to Think Like the SQL Server Engine Part 1](https://www.youtube.com/watch?v=oovA_9fiXVE)
 * [How to Think Like the SQL Server Engine Part 2](https://www.youtube.com/watch?v=A-cL0nXofiw)
 * [How to Think Like the SQL Server Engine Part 3](https://www.youtube.com/watch?v=EmSN9IzXecU)
 * [How to Think Like the SQL Server Engine Part 4](https://www.youtube.com/watch?v=swlN-XfsvZM)
