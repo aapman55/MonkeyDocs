@@ -14,7 +14,7 @@ jobs:
         id: release-label
         if: ${{ github.event.pull_request.merged == true }}
         with:
-          label_prefix: None
+          label_prefix: null
 
       - uses: actions-ecosystem/action-get-latest-tag@v1
         id: get-latest-tag
