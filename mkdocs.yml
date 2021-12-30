@@ -6,6 +6,9 @@ site_description: >-
   This is not a resource site. Just a brain dump of useful stuff
   for tools I encounter.
 
+# Copyright
+copyright: Copyright &copy; 2021 Aapman
+
 # Theme
 theme:
   name: material
