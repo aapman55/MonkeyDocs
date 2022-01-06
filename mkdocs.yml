@@ -76,14 +76,21 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Welcome to MonkeyDocs: index.md
-  - Microsoft:
-      - SQL server:
-        - Useful scripts:
-          - Generate Queries using Templates: Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
-          - Query SSIS package contents: Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
-          - Query group members: Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
-          - Query SQL Dependencies: Microsoft/SQL_server/useful_scripts/SQLdependencies.md
-        - Helpful resources: Microsoft/SQL_server/helpful_resources.md
-  - Python:
-    - Helpful resources: Python/helpful_resources.md
+  - Home: index.md
+  - Data Engineering and analysis:
+    -  Data_Engineering_Analysis/index.md
+    - Architecture:
+      - Data_Engineering_Analysis/Architecture/index.md
+      - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
+    - Microsoft:
+        - SQL server:
+          - Useful scripts:
+            - Generate Queries using Templates: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
+            - Query SSIS package contents: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
+            - Query group members: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
+            - Query SQL Dependencies: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/SQLdependencies.md
+          - Helpful resources: Data_Engineering_Analysis/Microsoft/SQL_server/helpful_resources.md
+    - Python:
+      - Helpful resources: Data_Engineering_Analysis/Python/helpful_resources.md
+  - Productivity Tools:
+    - Productivity/index.md
