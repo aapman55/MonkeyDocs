@@ -19,6 +19,7 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.tracking
+    - navigation.tabs
     - search.highlight
     - search.share
     - search.suggest
@@ -38,6 +39,9 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+  custom_dir: overrides
+
+use_directory_urls: true
 
 # Enable pencil icon to directly modify page
 repo_name: aapman55/MonkeyDocs
