@@ -84,6 +84,7 @@ nav:
       - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
     - Microsoft:
         - SQL server:
+          - Indexes: Data_Engineering_Analysis/Microsoft/SQL_server/indexes.md
           - Useful scripts:
             - Generate Queries using Templates: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
             - Query SSIS package contents: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
@@ -94,3 +95,5 @@ nav:
       - Helpful resources: Data_Engineering_Analysis/Python/helpful_resources.md
   - Productivity Tools:
     - Productivity/index.md
+  - Ideas bucket:
+    - ideas_bucket/index.md
