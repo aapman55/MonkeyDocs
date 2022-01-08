@@ -49,6 +49,15 @@ will see that they are also sorted. This makes it very easy to jump to a certain
 
 In the next sections we will expand on this book example to explain the concepts of indexes.
 
+## Index seeks and index scans
+As seen from the examples in the previous section, when there is an index (when the list is ordered) you can
+relatively quickly get to the correct row, in case the column you are looking in is part of the index. This 
+action of going through an index is called index seek.
+
+When there is no index present, you would have to go row by row and page by page to ge to the correct row. This 
+takes considerably longer. This action of going through the rows is called index scan. Most of the time you want
+to avoid index scans.
+
 ## What types of indexes are there?
 So now we have a rough idea what indexes are and why they are handy, we can have a look what types of indexes there are.
 We can distinguish the following index types:
@@ -62,4 +71,5 @@ We can distinguish the following index types:
     - Non-clustered
 
 ### The heap (no index)
-
+A table that had index type heap, means that it does not have an index. It just piles the rows in the order it 
+receives. Having no index means that 
