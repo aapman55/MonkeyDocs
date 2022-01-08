@@ -64,12 +64,61 @@ We can distinguish the following index types:
 
 * Heap (no index)
 * Row-store indexes
-    * Clustered indexes
-    * Non-clustered indexes
+    * Clustered
+    * Non-clustered
 * Column-store indexes  
     - Clustered
     - Non-clustered
 
 ### The heap (no index)
-A table that had index type heap, means that it does not have an index. It just piles the rows in the order it 
-receives. Having no index means that 
+A table that has index type heap, means that it does not have an index. It just piles the rows in the order it 
+receives. Having no index means that getting to a row might be slower. However, because the row is just written
+at the end, there is no need to put the row between existing rows and existing indexes do not need to be rewritten.
+This means that writing will be a lot faster.
+
+When inserted lots of rows, it might be beneficial to remove the index, then insert the rows and finally redo the
+indexes. For staging tables you should opt for this strategy.
+
+### Clustered vs non-clustered
+A clustered index is sorting the data itself, while a non-clustered index is keeping a separate ordered list.
+Clustered and non-clustered indexes can be easily explained by revisiting the book example. The pages are physically
+ordered, the text from those pages also move around when ordering the pages by page number. It IS your data, so when
+building a clustered index, it takes longer, as all the data needs to be moved with it.
+
+An example of a non-clustered index is the table of contents, it is a separate (much shorter) list that points
+to the page number where that chapter starts.Non-clustered indexes always will point to the clustered index. So you look 
+up the page number and then using that page number you seek through the clustered index to get to your page.
+
+#### Includes
+As discussed earlier, the clustered index IS your entire row and thus consists of all the columns. This means that
+if you get to the row, you will have access to all data. With a non-clustered index, you only have the columns that
+were part of the index (that were used to sort). This means that you need to make an extra step to get to that data.
+However, there is a way to include extra columns in the clustered index.
+
+Example:
+```t-sql
+CREATE NONCLUSTERED INDEX IX_Address_PostalCode  
+ON Person.Address (PostalCode)  
+INCLUDE (AddressLine1, AddressLine2, City, StateProvinceID);  
+```
+
+This should only be used for smaller columns and when that column is really needed often, otherwise avoid includes
+as it will increase the size of your storage.
+
+For more information: https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-indexes-with-included-columns
+
+### Row vs column store
+As the names imply row-store stores the rows row by row and a column-store stores the data in a column-wise fashion.
+The advantage of a column-store is that it can be compressed very well. The reason that compression can be done
+much better is that contents belonging to the same row look more alike. They have the same datatype, follow the 
+same pattern and/or are part of en enumeration (which limits the set of possibilities). 
+
+So let's say we have a column that contains the status (for example: started, closed, in progress etc.). There is 
+a finite number of statuses. So if we sort on the status, then it might be the case that on 1 8KB page there is only
+1 status present. In that case you could just say that all records on this page have status "started" for example,
+which will sae a lot in terms of storage. 
+
+However, there are also drawback. The data will only be columnar compressed when it reaches a threshold of 1,048,576 rows.
+Everything else will be stored in a delta row group.
+
+For more information see: https://docs.microsoft.com/en-us/sql/relational-databases/indexes/columnstore-indexes-overview?view=sql-server-ver15
