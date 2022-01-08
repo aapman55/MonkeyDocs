@@ -12,6 +12,8 @@ copyright: Copyright &copy; 2021 Aapman
 # Theme
 theme:
   name: material
+  logo: assets/images/monkeyDocsLogo.png
+  favicon: assets/images/monkeyDocsLogo.png
   features:
     - content.code.annotate
     - navigation.expand
