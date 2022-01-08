@@ -4,12 +4,18 @@ This page describes what indexes are, which types of indexes are present and whe
 But first of all, we need to understand how data is stored in SQL server.
 
 ## How is data stored?
+Data in SQL server is stored in pages, pages that are 8 KB big. A row is stored in such a page and cannot span
+multiple pages. What can be done is that if some columns are too large to make the row fit, instead of saving the
+contents directly on the same page, a pointer will be saved. This pointer will refer to other pages that contain the 
+data.
 
+For more information see: https://docs.microsoft.com/en-us/sql/relational-databases/pages-and-extents-architecture-guide
 
 ## What are indexes?
 In essence an index is nothing more than an ordered list. By knowing which columns are sorted it makes
 looking up the correct records much faster as you "know" where that record is.
 
+### Table example
 Let's look at following simple example of an unordered list:
 
 | fruit_id  | fruit_name      |
@@ -30,6 +36,18 @@ You would need go through the list until you find the correct record. This is a 
 can be found relatively easily, however, it still takes more time than when you know you can just pick the first one.
 
 So in case the `id` is used often in queries, it would make it simpler to have the records sorted on that column.
+
+### Book example
+Let's also take a book as analogy. Consider each page to be a row, a row consisting of 3 columns:
+
+* The page number
+* The chapter name/number
+* The contents
+
+In the case of a book the pages are sorted ordered by the page number. If you look at the chapter numbers you
+will see that they are also sorted. This makes it very easy to jump to a certain page or chapter.
+
+In the next sections we will expand on this book example to explain the concepts of indexes.
 
 ## What types of indexes are there?
 So now we have a rough idea what indexes are and why they are handy, we can have a look what types of indexes there are.
