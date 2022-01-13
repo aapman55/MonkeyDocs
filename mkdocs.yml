@@ -104,6 +104,7 @@ nav:
     - Productivity/index.md
     - General:
       - Productivity/general/index.md
+      - Record RTHK Archive: Productivity/general/RTHK_archive.md
     - Windows:
       - Productivity/windows/index.md
       - How to record system audio: Productivity/windows/record_system_audio.md
