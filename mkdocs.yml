@@ -99,6 +99,7 @@ nav:
     - Spark:
       - Data_Engineering_Analysis/spark/index.md
       - Recommended spark conf: Data_Engineering_Analysis/spark/recommended_spark_conf.md
+      - Spark session: Data_Engineering_Analysis/spark/spark_session.md
   - Productivity Tools:
     - Productivity/index.md
   - Ideas bucket:

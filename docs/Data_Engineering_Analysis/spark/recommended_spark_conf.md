@@ -45,3 +45,18 @@ get killed because of speculation. All this means is that the task is already do
 ```yml
 spark.speculation: True
 ```
+
+### Compression codec
+Spark offers 4 compression standards:
+
+* `lz4`
+* `lzf`
+* `snappy`
+* `zstd`
+
+The compression method `ZSTD` is going to be default in spark: https://issues.apache.org/jira/browse/SPARK-35181.
+Or atleast, the intent is there. `ZSTD` should be faster and more efficient than `snappy`.
+
+```yml
+spark.io.compression.codec: ZSTD
+```
