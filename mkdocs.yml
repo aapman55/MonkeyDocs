@@ -102,5 +102,12 @@ nav:
       - Spark session: Data_Engineering_Analysis/spark/spark_session.md
   - Productivity Tools:
     - Productivity/index.md
+    - General:
+      - Productivity/general/index.md
+    - Windows:
+      - Productivity/windows/index.md
+      - How to record system audio: Productivity/windows/record_system_audio.md
+      - How to record your screen: Productivity/windows/record_screen.md
+      - Bring back windows Photo Viewer: Productivity/windows/windows_photo_viewer.md
   - Ideas bucket:
     - ideas_bucket/index.md
