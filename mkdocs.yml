@@ -62,6 +62,7 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.magiclink
   - pymdownx.superfences
+  - pymdownx.snippets #Enables embedding external code files
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -111,5 +112,9 @@ nav:
       - How to record your screen: Productivity/windows/record_screen.md
       - Bring back Windows Photo Viewer: Productivity/windows/windows_photo_viewer.md
       - Custom Volume Mixer: Productivity/windows/custom_volume_mixer.md
+    - Browsers:
+      - Productivity/browsers/index.md
+      - Customise CSS on any webpage: Productivity/browsers/customise_css.md
+      - Inject Javascript on any webpage: Productivity/browsers/inject_js.md
   - Ideas bucket:
     - ideas_bucket/index.md
