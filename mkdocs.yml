@@ -99,6 +99,7 @@ nav:
       - Helpful resources: Data_Engineering_Analysis/Python/helpful_resources.md
     - Spark:
       - Data_Engineering_Analysis/spark/index.md
+      - Install Pyspark on Windows: Data_Engineering_Analysis/spark/pyspark_on_windows.md
       - Recommended spark conf: Data_Engineering_Analysis/spark/recommended_spark_conf.md
       - Spark session: Data_Engineering_Analysis/spark/spark_session.md
   - Productivity Tools:
