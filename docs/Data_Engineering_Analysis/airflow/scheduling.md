@@ -31,3 +31,10 @@ The allowed numerical values for each of the positions are:
 To play around with this notation, go to https://crontab.guru/.
 
 ## When does airflow actually start the schedule
+If you have the schedule `0 * * * *`, it will run every hour at minute `:00`. Let's say that
+the current time is `19:48`, you would expect that at `20:00` the schedule for `20:00` will be run.
+This, however, is not the case. At `20:00` the schedule for `19:00` will be run. Airflow runs the
+schedule at the end of the scheduling period.
+
+You can read more about it here: https://towardsdatascience.com/apache-airflow-tips-and-best-practices-ff64ce92ef8
+
