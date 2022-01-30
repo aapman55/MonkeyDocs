@@ -117,5 +117,8 @@ nav:
       - Productivity/browsers/index.md
       - Customise CSS on any webpage: Productivity/browsers/customise_css.md
       - Inject Javascript on any webpage: Productivity/browsers/inject_js.md
+    - Microsoft Office:
+      - Outlook:
+        - Filter on message type: Productivity/ms_office/outlook/filter_on_message_type.md
   - Ideas bucket:
     - ideas_bucket/index.md
