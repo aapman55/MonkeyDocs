@@ -11,7 +11,8 @@ Source:
     In the search box, include `messageclass:IPM.Note` to find only e-mail messages.
 
     Here is the full list (as far as I know) of message classes for Outlook/Exchange 2010 items. 
-    I found some of this information in Mastering Microsoft Exchange Server 2010 by Jim McBee and David Elfassy. 
+    I found some of this information in [Mastering Microsoft Exchange Server 2010](http://books.google.com/books?id=3fxuL9wBpr4C&pg=PA496&dq=outlook+2010+%22Message+Types+for+Managed+Content+Settings%22&hl=en&sa=X&ei=1tHzUvnvFKLXyAHQw4DwAQ&ved=0CD4Q6AEwAA#v=onepage&q=outlook%202010%20%22Message%20Types%20for%20Managed%20Content%20Settings%22&f=false) 
+    by Jim McBee and David Elfassy. 
     I found the rest by adding the "Message Class" column to an Outlook folder view and noting the values for different types of messages in that folder.
     
     * **IPM.Activity:** Item in Outlook Journal folder
