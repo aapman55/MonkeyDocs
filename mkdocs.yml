@@ -89,6 +89,9 @@ nav:
         - SQL server:
           - Indexes: Data_Engineering_Analysis/Microsoft/SQL_server/indexes.md
           - Recommended server settings: Data_Engineering_Analysis/Microsoft/SQL_server/recommended_server_settings.md
+          - Workarounds for older versions:
+            -  Split strings: Data_Engineering_Analysis/Microsoft/SQL_server/workaround_older_versions/string_split.md
+            - String aggregates: Data_Engineering_Analysis/Microsoft/SQL_server/workaround_older_versions/string_aggregate.md
           - Useful scripts:
             - Generate Queries using Templates: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/GenerateTemplatedQueries.md
             - Query SSIS package contents: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/QuerySSISPackages.md
