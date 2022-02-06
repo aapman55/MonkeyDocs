@@ -87,6 +87,7 @@ nav:
       - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
     - Microsoft:
         - SQL server:
+          - CTE recursion: Data_Engineering_Analysis/Microsoft/SQL_server/CTE_recursion.md
           - Indexes: Data_Engineering_Analysis/Microsoft/SQL_server/indexes.md
           - Recommended server settings: Data_Engineering_Analysis/Microsoft/SQL_server/recommended_server_settings.md
           - Workarounds for older versions:
