@@ -81,7 +81,7 @@ Say we are `Donnie` and we want to know who he is the manager of, and who that p
 etc. Since Donnie is only manager of Erica, we expect 2 records since the anchor row will always be there.
 The SQL query for that is shown below.
 
-``` t-sql linenums="1"
+``` t-sql linenums="1" hl_lines="12"
 WITH CTE_Recursive AS
 (
 	SELECT *
@@ -109,7 +109,7 @@ person whose manager was in the previous loop.
 In this example we are still Donnie. Now we want to know who his manager is, and their manager etc.
 We do exactly the same as the previous example, but now we need to revert the join condition.
 
-``` t-sql linenums="1"
+``` t-sql linenums="1" hl_lines="12 13"
 WITH CTE_Recursive AS
 (
 	SELECT H.*
@@ -140,7 +140,7 @@ satisfy the join condition and thus will not be added. What we need is another c
 up the previous condition. We will allow the `MANAGER_ID` to be the same as the `ID` as long as it
 just occurs once. 
 
-```t-sql linenums="1"
+```t-sql linenums="1" hl_lines="13"
 WITH CTE_Recursive AS
 (
 	SELECT H.*
