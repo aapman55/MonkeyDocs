@@ -1,4 +1,7 @@
 # CTE recursion
+!!! warning
+    CTE recursion is not real recursion, it is just iteration.
+
 With [Common Table Expressions (CTE)](https://docs.microsoft.com/en-us/sql/t-sql/queries/with-common-table-expression-transact-sql) 
 you can create recursions. An often used example is to traverse an organisational hierarchy. Let's say
 you have a table containing employees and who their manager is. Then if you provide a starting point it
@@ -167,5 +170,26 @@ correctly.
 ![Going up the tree try 2](img/recursion_going_up_2.png)
 
 ## Technical explanation
-!!! missing
-    I have not figured out the technical explanation yet.
+!!! warning
+    CTE recursion is not real recursion, it is just iteration.
+
+From the [Postgres docs](https://www.postgresql.org/docs/9.1/queries-with.html): 
+!!! quote
+    Note: Strictly speaking, this process is iteration not recursion, 
+    but `RECURSIVE` is the terminology chosen by the SQL standards committee.
+
+From the archives of [Microsoft docs](https://docs.microsoft.com/en-us/archive/blogs/craigfr/recursive-ctes)
+it can also be concluded that only the results of the previous run are available.
+
+!!! quote
+    Once it finishes executing the anchor part of the plan, 
+    the query processor continues by executing the second input to the concatenation operator 
+    which happens to be the recursive part of the plan.  This part of the plan has a nested 
+    loops join with the secondary spool as its outer input.  The nested loops join requests a 
+    row from the spool which so far contains only the one row for employee 109.  
+    The spool returns this row and deletes it from the worktable.  The join then executes the 
+    index seek on its inner input to find all employees who work for employee 109.  
+    This index seek returns the following rows which the primary spool inserts into the worktable:
+
+Also [this post](https://dba.stackexchange.com/questions/226946/how-does-sql-recursion-actually-work)
+on stackexchange concludes that it is not real recursion.
