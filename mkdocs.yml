@@ -82,6 +82,8 @@ nav:
   - Home: index.md
   - Data Engineering and analysis:
     -  Data_Engineering_Analysis/index.md
+    - General:
+        - Regular Expressions: Data_Engineering_Analysis/general/regex.md
     - Architecture:
       - Data_Engineering_Analysis/Architecture/index.md
       - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
