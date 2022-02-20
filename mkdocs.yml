@@ -104,6 +104,7 @@ nav:
     - Python:
       - IDE:
         - Data_Engineering_Analysis/Python/IDE/pycharm.md
+      - Unit testing: Data_Engineering_Analysis/Python/unittest.md
       - Helpful resources: Data_Engineering_Analysis/Python/helpful_resources.md
     - Spark:
       - Data_Engineering_Analysis/spark/index.md
