@@ -79,7 +79,7 @@ In the test method you run the method you want to test and compare that with wha
 done by using one of the many assert methods provided by the TestCase class.
 
 #### Mocking imports
-For unittests you want to just test the functionality in you method, in a controlled manner. 
+For unittests you want to just test the functionality in the method, in a controlled manner. 
 If your method or function has external dependencies on for example a database connection, then the outcome of the test
 is not deterministic. The database might be down, and thus failing the unittest. To counter this, we can temporarily
 replace the dependency on the database in the test. This is called mocking. 
@@ -193,11 +193,11 @@ to see the code with the parts not covered highlighted in red.
 
 Create a simple report in the terminal:
 ```commandline
-coverage report --include="./ssis_analyzer/wherescape/*.py"
+coverage report --include="./path/to/your/modules/*.py"
 ```
 Create a html reportL
 ```commandline
-coverage html --include="./ssis_analyzer/wherescape/*.py"
+coverage html --include="./path/to/your/modules/*.py"
 ```
 
 By defining `--include`, you can limit the report to a specific part of your code base. This will speed up the 
