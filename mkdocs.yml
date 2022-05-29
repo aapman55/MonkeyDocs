@@ -136,5 +136,8 @@ nav:
     - Microsoft Office:
       - Outlook:
         - Filter on message type: Productivity/ms_office/outlook/filter_on_message_type.md
+    - Flash:
+      - Flashpoint: Productivity/flash/flashpoint.md
+  
   - Ideas bucket:
     - ideas_bucket/index.md
