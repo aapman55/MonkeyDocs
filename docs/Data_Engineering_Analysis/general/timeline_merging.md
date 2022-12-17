@@ -56,7 +56,7 @@ However, these rules can be simplified by taking into account the notes we have 
 The reason that we do not need to check for the end node is because the nodes of timeline
 C was generated from A and B. This means that it is never going to overshoot
 a range from one of the originals. So if the begin point of C is within a range of A,
-then by definition the end point of C will also be in the same range. 
+then by definition the end point of C will also be in the same range of A. 
 
 !!! conclusion
     So the only check we need to perform per interval of C, is that C-start is 
@@ -78,4 +78,98 @@ The rules for the special case would be:
 * C-start equals A-start, and
 * C-end equals A-end
 
-## Code sample
+## Code implementation
+For the code sample we will be using SQL. We will also be using Common Table Expressions
+to divide up the steps.
+
+### Getting the nodes
+```sql linenums="1"
+WITH CTE_nodes AS
+(
+    SELECT DISTINCT id, start_id            FROM A     
+    UNION        
+    SELECT DISTINCT id, end_id AS start_id  FROM A    
+    UNION
+    SELECT DISTINCT id, start_id            FROM B     
+    UNION        
+    SELECT DISTINCT id, end_id AS start_id  FROM B
+)
+```
+
+### Generating the new timeline
+Here we assume that you are using a SQL dialect that supports `QUALIFY` such as snowflake and databricks.
+If the SQL dialect does not have this functionality, you would need to add an extra
+CTE for filtering.
+
+```sql linenums="1"
+,CTE_timelines AS
+(
+    SELECT 
+        id
+    ,   start_id
+    ,   LEAD(start_id) OVER (PARTITION BY id ORDER BY start_id) AS end_id
+    FROM CTE_nodes
+    QUALIFY end_id IS NOT NULL
+)
+```
+We do not want the last row, since we put the start and endpoints in the same list.
+If you have the special case where the start and end can be the same, we need to manually
+append it to the generated timeline.
+
+```sql linenums="1" title="special case"
+,CTE_timelines AS
+(
+    SELECT 
+        id
+    ,   start_id
+    ,   LEAD(start_id) OVER (PARTITION BY id ORDER BY start_id) AS end_id
+    FROM CTE_nodes
+    QUALIFY end_id IS NOT NULL
+    
+    UNION
+    
+    SELECT id, start_id, end_id FROM A WHERE start_id = end_id
+    
+    UNION
+    
+    SELECT id, start_id, end_id FROM B WHERE start_id = end_id
+)
+```
+
+### Attaching original records to the new timeline
+```sql linenums="1"
+SELECT *
+FROM CTE_timelines AS CTE
+    LEFT JOIN A
+        ON CTE.id = A.id
+        AND CTE.start_id >= A.start_id
+        AND CTE.start_id < A.end_id
+    LEFT JOIN B
+        ON CTE.id = B.id
+        AND CTE.start_id >= B.start_id
+        AND CTE.start_id < B.end_id
+```
+
+In case we are dealing with the special case, we have:
+
+```sql linenums="1" title="Special case"
+SELECT *
+FROM CTE_timelines AS CTE
+    LEFT JOIN A
+        ON CTE.id = A.id
+        AND (
+            (CTE.start_id >= A.start_id AND CTE.start_id < A.end_id AND CTE.start_id <> CTE.end_id AND A.start_id <> A.end_id)
+            OR
+            (CTE.start_id = CTE.end_id AND CTE.start_id = A.start_id AND CTE.end_id = A.end_id)
+        )
+    LEFT JOIN B
+        ON CTE.id = B.id
+        AND (
+            (CTE.start_id >= B.start_id AND CTE.start_id < B.end_id AND CTE.start_id <> CTE.end_id AND B.start_id <> B.end_id)
+            OR
+            (CTE.start_id = CTE.end_id AND CTE.start_id = B.start_id AND CTE.end_id = B.end_id)
+        )
+```
+
+## Full code example
+!!! warning "Work in Progress"
