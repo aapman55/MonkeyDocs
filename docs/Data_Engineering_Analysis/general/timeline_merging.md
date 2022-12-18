@@ -71,6 +71,11 @@ this special case and for the normal case. For the special case we also need to 
 an extra record on timeline C with the C-start and C-end equal.
 
 To the rule for the normal case we need to add that the begin and end are not coinciding.
+!!! tip
+    If you are certain that records with begin and end times equal only occur at the
+    end of your timeline. Then you can simplify the logic by not having to add above mentioned
+    filter to your normal case. This is because we only use the start node of the new timeline
+    to do the matching. That means there is never going to be a check on your last node (which can only be an end node).
 
 The rules for the special case would be:
 

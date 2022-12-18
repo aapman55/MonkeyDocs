@@ -21,6 +21,7 @@ FROM
     ,   (1,4,7)
     ,   (1,7,10)
     ,   (2,0,8)
+    ,   (2,8,8)
     ,   (2,8,10)
     ,   (2,10,10);
 
@@ -58,16 +59,16 @@ SELECT
 FROM CTE_timelines AS CTE
     LEFT JOIN A
         ON CTE.id = A.id
-        AND
-        (
-                (CTE.start_id >= A.start_id   AND CTE.start_id < A.end_id)
-            OR  (CTE.start_id = CTE.end_id AND CTE.start_id = A.start_id AND CTE.end_id = A.end_id)
+        AND (
+            (CTE.start_id >= A.start_id AND CTE.start_id < A.end_id AND CTE.start_id <> CTE.end_id AND A.start_id <> A.end_id)
+            OR
+            (CTE.start_id = CTE.end_id AND CTE.start_id = A.start_id AND CTE.end_id = A.end_id)
         )
     LEFT JOIN B
         ON CTE.id = B.id
-        AND
-        (
-                (CTE.start_id >= B.start_id   AND CTE.start_id < B.end_id)
-            OR  (CTE.start_id = CTE.end_id AND CTE.start_id = B.start_id AND CTE.end_id = B.end_id)
+        AND (
+            (CTE.start_id >= B.start_id AND CTE.start_id < B.end_id AND CTE.start_id <> CTE.end_id AND B.start_id <> B.end_id)
+            OR
+            (CTE.start_id = CTE.end_id AND CTE.start_id = B.start_id AND CTE.end_id = B.end_id)
         )
-ORDER BY CTE.ID, CTE.START_ID
+ORDER BY CTE.ID, CTE.START_ID, CTE.END_ID
