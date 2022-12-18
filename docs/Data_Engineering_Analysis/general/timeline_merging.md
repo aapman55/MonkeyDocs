@@ -172,10 +172,14 @@ FROM CTE_timelines AS CTE
 ```
 
 ## Full code example
+The following example can be run in Snowflake, just copy and paste. For the special case
+we have added an additional example.
+
 === "Normal case"
     ```sql linenums="1"
     --8<-- "./docs/Data_Engineering_Analysis/general/timeline_example1.sql"
     ```
+    ![Query result for the special case example](img/timeline_example1.png)
 === "Special case"
     ```sql linenums="1"
     --8<-- "./docs/Data_Engineering_Analysis/general/timeline_example2.sql"

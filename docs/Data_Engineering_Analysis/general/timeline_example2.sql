@@ -43,7 +43,7 @@ WITH CTE_nodes AS
     FROM CTE_nodes
     QUALIFY end_id IS NOT NULL
 
-        UNION
+    UNION
 
     SELECT id, start_id, end_id FROM A WHERE start_id = end_id
 
