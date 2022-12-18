@@ -172,4 +172,7 @@ FROM CTE_timelines AS CTE
 ```
 
 ## Full code example
-!!! warning "Work in Progress"
+=== "Normal case"
+    ```sql linenums="1"
+    --8<-- "./docs/Data_Engineering_Analysis/general/timeline_example1.sql"
+    ```
