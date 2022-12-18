@@ -176,3 +176,8 @@ FROM CTE_timelines AS CTE
     ```sql linenums="1"
     --8<-- "./docs/Data_Engineering_Analysis/general/timeline_example1.sql"
     ```
+=== "Special case"
+    ```sql linenums="1"
+    --8<-- "./docs/Data_Engineering_Analysis/general/timeline_example2.sql"
+    ```
+    ![Query result for the special case example](img/timeline_example2.png)
