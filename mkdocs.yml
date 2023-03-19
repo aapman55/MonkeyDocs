@@ -111,6 +111,7 @@ nav:
       - Helpful resources: Data_Engineering_Analysis/Python/helpful_resources.md
       - Useful libraries:
           - BoxSDK: Data_Engineering_Analysis/Python/useful_libraries/boxsdk.md
+          - SQLFluff: Data_Engineering_Analysis/Python/useful_libraries/sqlfluff.md
     - Spark:
       - Data_Engineering_Analysis/spark/index.md
       - Install Pyspark on Windows: Data_Engineering_Analysis/spark/pyspark_on_windows.md
