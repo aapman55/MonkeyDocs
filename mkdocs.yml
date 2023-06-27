@@ -87,6 +87,7 @@ nav:
     - General:
         - Regular Expressions: Data_Engineering_Analysis/general/regex.md
         - Merging Timelines: Data_Engineering_Analysis/general/timeline_merging.md
+        - SSL Certificates: Data_Engineering_Analysis/general/ssl-certificates.md
     - Architecture:
       - Data_Engineering_Analysis/Architecture/index.md
       - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
