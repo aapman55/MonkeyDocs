@@ -91,6 +91,9 @@ nav:
     - Architecture:
       - Data_Engineering_Analysis/Architecture/index.md
       - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
+    - Command Line:
+      - Bash: Data_Engineering_Analysis/commandline/bash.md
+      - Git: Data_Engineering_Analysis/commandline/git.md
     - Microsoft:
         - SQL server:
           - CTE recursion: Data_Engineering_Analysis/Microsoft/SQL_server/CTE_recursion.md
