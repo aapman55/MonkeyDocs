@@ -33,7 +33,7 @@ In order to find all the overlapping records, we need to perform 2 window functi
 The `JOURNALENDNO_ID` of a previous row should ALWAYS be smaller or equal to the `JOURNALNO_ID` of the current row.
 If that is not the case then the previous record is still active when the current row is active.
 
-```sql
+```sql linenums="1"
 WITH cte_data AS
 (
   SELECT col1 AS PK_ID, col2 AS JOURNALNO_ID, col3 AS JOURNALENDNO_ID
@@ -61,7 +61,7 @@ As can be seen, only 1 of the overlapping records were found. The next check wil
 The `JOURNALENDNO_ID` of the current row should ALWAYS be smaller or equal to the `JOURNALNO_ID` of the following 
 rows. Otherwise, the current row is not properly closed while the next row is starting.
 
-```sql
+```sql linenums="1"
 WITH cte_data AS
 (
   SELECT col1 AS PK_ID, col2 AS JOURNALNO_ID, col3 AS JOURNALENDNO_ID
@@ -87,7 +87,7 @@ FROM cte_data as cte
 In this example, we assume that your SQL supports `QUALIFY`. If `QUALIFY` is not supported, you need to create an
 additional CTE for filtering.
 
-```sql
+```sql linenums="1"
 WITH cte_data AS
 (
   SELECT col1 AS PK_ID, col2 AS JOURNALNO_ID, col3 AS JOURNALENDNO_ID
