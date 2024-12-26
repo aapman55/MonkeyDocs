@@ -82,19 +82,30 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
+  - Coding:
+    - coding/index.md
+    - General:
+      - Regular Expressions: coding/general/regex.md
+      - SSL Certificates: coding/general/ssl-certificates.md
+    - Command Line:
+      - Bash: coding/commandline/bash.md
+      - Git: coding/commandline/git.md
+    - Python:
+      - IDE:
+        - coding/Python/IDE/pycharm.md
+      - Unit testing: coding/Python/unittest.md
+      - Helpful resources: coding/Python/helpful_resources.md
+      - Useful libraries:
+          - BoxSDK: coding/Python/useful_libraries/boxsdk.md
+          - SQLFluff: coding/Python/useful_libraries/sqlfluff.md
   - Data Engineering and analysis:
     -  Data_Engineering_Analysis/index.md
     - General:
-        - Regular Expressions: Data_Engineering_Analysis/general/regex.md
         - Merging Timelines: Data_Engineering_Analysis/general/timeline_merging.md
         - Detecting Overlapping Timelines: Data_Engineering_Analysis/general/detect-overlapping-timelines.md
-        - SSL Certificates: Data_Engineering_Analysis/general/ssl-certificates.md
     - Architecture:
       - Data_Engineering_Analysis/Architecture/index.md
       - Idempotence: Data_Engineering_Analysis/Architecture/idempotence.md
-    - Command Line:
-      - Bash: Data_Engineering_Analysis/commandline/bash.md
-      - Git: Data_Engineering_Analysis/commandline/git.md
     - Microsoft:
         - SQL server:
           - CTE recursion: Data_Engineering_Analysis/Microsoft/SQL_server/CTE_recursion.md
@@ -109,14 +120,6 @@ nav:
             - Query group members: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/GroupMembersQuery.md
             - Query SQL Dependencies: Data_Engineering_Analysis/Microsoft/SQL_server/useful_scripts/SQLdependencies.md
           - Helpful resources: Data_Engineering_Analysis/Microsoft/SQL_server/helpful_resources.md
-    - Python:
-      - IDE:
-        - Data_Engineering_Analysis/Python/IDE/pycharm.md
-      - Unit testing: Data_Engineering_Analysis/Python/unittest.md
-      - Helpful resources: Data_Engineering_Analysis/Python/helpful_resources.md
-      - Useful libraries:
-          - BoxSDK: Data_Engineering_Analysis/Python/useful_libraries/boxsdk.md
-          - SQLFluff: Data_Engineering_Analysis/Python/useful_libraries/sqlfluff.md
     - Spark:
       - Data_Engineering_Analysis/spark/index.md
       - Install Pyspark on Windows: Data_Engineering_Analysis/spark/pyspark_on_windows.md
