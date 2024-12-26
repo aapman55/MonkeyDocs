@@ -16,6 +16,7 @@ git rev-list [<options>] <commit>…​ [--] [<path>…​]
 ```
 
 Some handy options to consider:
+
 * `--count` counts the number of commits.
 * `--format` allows for formatting the output.
 * `--merges` only show merge commits.
