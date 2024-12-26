@@ -90,6 +90,7 @@ nav:
     - Command Line:
       - Bash: coding/commandline/bash.md
       - Git: coding/commandline/git.md
+      - GREP: coding/commandline/grep.md
     - Python:
       - IDE:
         - coding/Python/IDE/pycharm.md
