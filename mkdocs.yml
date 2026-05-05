@@ -104,6 +104,7 @@ nav:
     -  Data_Engineering_Analysis/index.md
     - General:
         - Merging Timelines: Data_Engineering_Analysis/general/timeline_merging.md
+        - Matching Timelines: Data_Engineering_Analysis/general/timeline_matching.md
         - Detecting Overlapping Timelines: Data_Engineering_Analysis/general/detect-overlapping-timelines.md
     - Architecture:
       - Data_Engineering_Analysis/Architecture/index.md
